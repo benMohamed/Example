@@ -13,7 +13,7 @@ enum MoEngageJournifyConstant {
 
 enum MoEngageDestinationConstant {
     static let journifyAnonymousIDAttribute = "USER_ATTRIBUTE_JOURNIFY_ID"
-    static let destinationKey = "MoEngage"
+    static let destinationKey = "moengage"
     static let longitude = "longitude"
     static let latitude = "latitude"
     static let attributeName = "attributeName"
