@@ -15,7 +15,7 @@ public class MoEngageDestination: UIResponder, DestinationPlugin {
     }
     
     public func update(settings: Settings, type: UpdateType) {
-        guard type == .initial else { return }
+//        guard type == .initial else { return }
         
         guard let tempSettings: MoEngageSettings = settings.integrationSettings(forPlugin: self) else { return }
         moengageSettings = tempSettings
