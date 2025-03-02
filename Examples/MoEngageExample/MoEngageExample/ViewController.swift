@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Segment
+import Journify
 
 class ViewController: UIViewController {
 
@@ -16,7 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         // Set Unique Id for Segment
-        Analytics.main.identify(userId: "Deepa")
+        Journify.main.identify(userId: "Deepa")
     }
 
     func getFormattedDate() -> String? {
@@ -48,35 +48,35 @@ extension ViewController: UITableViewDelegate {
         let currentRowSelected = Rows.allCases[indexPath.row]
         switch currentRowSelected {
         case .setAlias:
-            Analytics.main.alias(newId: "MoEngage-Alias")
+            break
         case .setPhone:
             let phoneTrait = ["phone": "1-234-5678"]
-            Analytics.main.identify(traits: phoneTrait)
+            Journify.main.identify(traits: phoneTrait)
         case .setGender:
             let genderTrait = ["gender": "male"]
-            Analytics.main.identify(traits: genderTrait)
+            Journify.main.identify(traits: genderTrait)
         case .setLastName:
             let lastNameTrait = ["lastName": "lnu"]
-            Analytics.main.identify(traits: lastNameTrait)
+            Journify.main.identify(traits: lastNameTrait)
         case .setFirstName:
             let firstNameTrait = ["firstName": "fnu"]
-            Analytics.main.identify(traits: firstNameTrait)
-            Analytics.main.identify(traits: firstNameTrait)
+            Journify.main.identify(traits: firstNameTrait)
+            Journify.main.identify(traits: firstNameTrait)
         case .setEmail:
             let emailTrait = ["email": "moe@test.com"]
-            Analytics.main.identify(traits: emailTrait)
+            Journify.main.identify(traits: emailTrait)
         case .setBirthdate:
             let birthdayTrait = ["birthday": Date()]
-            Analytics.main.identify(traits: birthdayTrait)
+            Journify.main.identify(traits: birthdayTrait)
         case .setisoBirthDay:
             let isoBirthdayTrait = ["isoBirthday": getFormattedDate()]
-            Analytics.main.identify(traits: isoBirthdayTrait)
+            Journify.main.identify(traits: isoBirthdayTrait)
         case .setisoDate:
             let isoDateTrait = ["isoDate": getFormattedDate()]
-            Analytics.main.identify(traits: isoDateTrait)
+            Journify.main.identify(traits: isoDateTrait)
         case .setLocation:
             let locationTrait = ["location": ["latitude":74.0, "longitude": 78.0]]
-            Analytics.main.identify(traits: locationTrait)
+            Journify.main.identify(traits: locationTrait)
         case .trackEvents:
             var events = [String:Any]()
             events["dupe"] = "default"
@@ -85,11 +85,11 @@ extension ViewController: UITableViewDelegate {
             events["artist"] = "David Garrett"
             events["testDate"] = getFormattedDate()
             events["testDate2"] = getFormattedDate()
-            Analytics.main.track(name: "Test_123", properties: events)
+            Journify.main.track(name: "Test_123", properties: events)
         case .flush:
-            Analytics.main.flush()
+            Journify.main.flush()
         case .resetUser:
-            Analytics.main.reset()
+            Journify.main.reset()
         }
         
     }

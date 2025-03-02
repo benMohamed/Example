@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		10F1D52C2D7359430032567C /* Journify-MoEngage in Frameworks */ = {isa = PBXBuildFile; productRef = 10F1D52B2D7359430032567C /* Journify-MoEngage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		10F1D4FC2D7356280032567C /* MoEngageExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MoEngageExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F1D52C2D7359430032567C /* Journify-MoEngage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +83,7 @@
 			);
 			name = MoEngageExample;
 			packageProductDependencies = (
+				10F1D52B2D7359430032567C /* Journify-MoEngage */,
 			);
 			productName = MoEngageExample;
 			productReference = 10F1D4FC2D7356280032567C /* MoEngageExample.app */;
@@ -107,6 +113,9 @@
 			);
 			mainGroup = 10F1D4F32D7356280032567C;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				10F1D52A2D7359430032567C /* XCRemoteSwiftPackageReference "Example" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 10F1D4FD2D7356280032567C /* Products */;
 			projectDirPath = "";
@@ -153,6 +162,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -181,6 +191,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -335,6 +346,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		10F1D52A2D7359430032567C /* XCRemoteSwiftPackageReference "Example" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/benMohamed/Example";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		10F1D52B2D7359430032567C /* Journify-MoEngage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 10F1D52A2D7359430032567C /* XCRemoteSwiftPackageReference "Example" */;
+			productName = "Journify-MoEngage";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 10F1D4F42D7356280032567C /* Project object */;
 }

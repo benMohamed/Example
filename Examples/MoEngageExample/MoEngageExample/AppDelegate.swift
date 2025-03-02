@@ -6,8 +6,8 @@
 //
 
 import UIKit
-import Segment
-import Segment_MoEngage
+import Journify
+import Journify_MoEngage
 import MoEngageSDK
 
 @main
@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         UNUserNotificationCenter.current().delegate = self
-        let sdkConfig = MoEngageSDKConfig(withAppID: "YOUR APP ID")
+        let sdkConfig = MoEngageSDKConfig(withAppID: "0VOQRFIRBGMRLRAX22KCZWC8")
         sdkConfig.moeDataCenter = MoEngageDataCenter.data_center_01
         sdkConfig.appGroupID = "group.com.alphadevs.MoEngage.NotificationServices"
         sdkConfig.consoleLogConfig = .init(isLoggingEnabled: true, loglevel: .verbose)
@@ -28,12 +28,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        Analytics.main.registeredForRemoteNotifications(deviceToken: deviceToken)
+        Journify.main.registeredForRemoteNotifications(deviceToken: deviceToken)
     }
     
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        Analytics.main.receivedRemoteNotification(userInfo: userInfo)
+        Journify.main.receivedRemoteNotification(userInfo: userInfo)
     }
 
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
@@ -46,9 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
 }
 
-extension Analytics {
-    static let main: Analytics = {
-        let analytics = Analytics(configuration: Configuration(writeKey: "Your Write Key")
+extension Journify {
+    static let main: Journify = {
+        let analytics = Journify(configuration: Configuration(writeKey: "wk_2szF0SSkRMN8reMmPqXgdozKmPu")
                             .flushAt(3)
                             .trackApplicationLifecycleEvents(true))
         analytics.add(plugin: MoEngageDestination())
