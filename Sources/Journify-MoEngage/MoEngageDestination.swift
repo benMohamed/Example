@@ -18,8 +18,9 @@ public class MoEngageDestination: UIResponder, DestinationPlugin {
     public func update(settings: Settings, type: UpdateType) {
 //        guard type == .initial else { return }
         
-        guard let tempSettings: MoEngageSettings = settings.integrationSettings(forPlugin: self) else { return }
-        moengageSettings = tempSettings
+        if let tempSettings: MoEngageSettings = settings.integrationSettings(forPlugin: self) {
+            moengageSettings = tempSettings
+        }
         
         guard let appID = moengageSettings?.apiKey else {
             MoEngageLogger.logDefault(message: "App ID not present")
