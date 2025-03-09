@@ -12,11 +12,12 @@ import MoEngageSDK
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    private let moEngageAppId = "YOUR APP ID"
         
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         UNUserNotificationCenter.current().delegate = self
-        let sdkConfig = MoEngageSDKConfig(withAppID: "YOUR APP ID")
+        let sdkConfig = MoEngageSDKConfig(withAppID: moEngageAppId)
         sdkConfig.moeDataCenter = MoEngageDataCenter.data_center_01
         sdkConfig.appGroupID = "group.com.alphadevs.MoEngage.NotificationServices"
         sdkConfig.consoleLogConfig = .init(isLoggingEnabled: true, loglevel: .verbose)
@@ -51,7 +52,7 @@ extension Analytics {
         let analytics = Analytics(configuration: Configuration(writeKey: "Your Write Key")
                             .flushAt(3)
                             .trackApplicationLifecycleEvents(true))
-        analytics.add(plugin: MoEngageDestination())
+        analytics.add(plugin: MoEngageDestination(moengageSettings: MoEngageSettings(apiKey: moEngageAppId)))
         return analytics
     }()
 }

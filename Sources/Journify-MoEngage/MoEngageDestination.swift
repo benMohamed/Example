@@ -11,7 +11,8 @@ public class MoEngageDestination: UIResponder, DestinationPlugin {
     public var analytics: Journify?
     private var moengageSettings: MoEngageSettings?
     
-    public override init() {
+    public init(moengageSettings: MoEngageSettings) {
+        self.moengageSettings = moengageSettings
     }
     
     public func update(settings: Settings, type: UpdateType) {
@@ -155,13 +156,6 @@ public class MoEngageDestination: UIResponder, DestinationPlugin {
         return nil
     }
     
-//    public func alias(event: AliasEvent) -> AliasEvent? {
-//        if let userId = event.userId, let apiKey = moengageSettings?.apiKey {
-//            MoEngageSDKAnalytics.sharedInstance.setAlias(userId, forAppID: apiKey)
-//        }
-//        return event
-//    }
-    
     public func flush() {
         if let apiKey = moengageSettings?.apiKey {
             MoEngageSDKAnalytics.sharedInstance.flush(forAppID: apiKey)
@@ -209,7 +203,7 @@ extension MoEngageDestination: UNUserNotificationCenterDelegate {
     }
 }
 
-struct MoEngageSettings: Codable {
+public struct MoEngageSettings: Codable {
     var apiKey: String
 }
 

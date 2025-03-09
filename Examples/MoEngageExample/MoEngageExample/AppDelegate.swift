@@ -9,6 +9,7 @@ import UIKit
 import Journify
 import Journify_MoEngage
 import MoEngageSDK
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
@@ -16,18 +17,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         UNUserNotificationCenter.current().delegate = self
-        let sdkConfig = MoEngageSDKConfig(withAppID: "0VOQRFIRBGMRLRAX22KCZWC8")
-        sdkConfig.moeDataCenter = MoEngageDataCenter.data_center_01
-        sdkConfig.appGroupID = "group.com.alphadevs.MoEngage.NotificationServices"
+        let sdkConfig = MoEngageSDKConfig(appId: "C58DX6Q27VSUOC4ZJ1DX9BPU", dataCenter: MoEngageDataCenter.data_center_01)
+        sdkConfig.appGroupID = "group.bmex.moengage.example"
         sdkConfig.consoleLogConfig = .init(isLoggingEnabled: true, loglevel: .verbose)
         MoEngageInitializer.initializeDefaultInstance(sdkConfig: sdkConfig)
-        
         MoEngageSDKMessaging.sharedInstance.registerForRemoteNotification(withCategories: nil, andUserNotificationCenterDelegate: self)
-        
+        requestPushNotificationPermission(application)
+
         return true
     }
     
+    func requestPushNotificationPermission(_ application: UIApplication) {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
+            if granted {
+                DispatchQueue.main.async {
+                    application.registerForRemoteNotifications()
+                }
+            } else {
+                print("Push notification permission denied: \(error?.localizedDescription ?? "No error")")
+            }
+        }
+    }
+    
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenString = deviceToken.map { String(format: "%02.2hhx", $0) }.joined()
+        print("BMEX APNs Device Token: \(tokenString)")
         Journify.main.registeredForRemoteNotifications(deviceToken: deviceToken)
     }
     
