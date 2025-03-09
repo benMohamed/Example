@@ -66,7 +66,8 @@ extension Journify {
         let analytics = Journify(configuration: Configuration(writeKey: "wk_2szF0SSkRMN8reMmPqXgdozKmPu")
                             .flushAt(3)
                             .trackApplicationLifecycleEvents(true))
-        analytics.add(plugin: MoEngageDestination())
+        let settings: MoEngageSettings = MoEngageSettings(apiKey: "your-api-key-here")
+        analytics.add(plugin: MoEngageDestination(moengageSettings: settings))
         return analytics
     }()
 }

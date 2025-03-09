@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10F1D52C2D7359430032567C /* Journify-MoEngage in Frameworks */ = {isa = PBXBuildFile; productRef = 10F1D52B2D7359430032567C /* Journify-MoEngage */; };
+		108EE2852D7DDBEA00DC2BBD /* Journify-MoEngage in Frameworks */ = {isa = PBXBuildFile; productRef = 108EE2842D7DDBEA00DC2BBD /* Journify-MoEngage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,7 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				10F1D52C2D7359430032567C /* Journify-MoEngage in Frameworks */,
+				108EE2852D7DDBEA00DC2BBD /* Journify-MoEngage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,7 +83,7 @@
 			);
 			name = MoEngageExample;
 			packageProductDependencies = (
-				10F1D52B2D7359430032567C /* Journify-MoEngage */,
+				108EE2842D7DDBEA00DC2BBD /* Journify-MoEngage */,
 			);
 			productName = MoEngageExample;
 			productReference = 10F1D4FC2D7356280032567C /* MoEngageExample.app */;
@@ -114,7 +114,7 @@
 			mainGroup = 10F1D4F32D7356280032567C;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				10F1D52A2D7359430032567C /* XCRemoteSwiftPackageReference "Example" */,
+				108EE2832D7DDBEA00DC2BBD /* XCRemoteSwiftPackageReference "Example" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 10F1D4FD2D7356280032567C /* Products */;
@@ -350,7 +350,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		10F1D52A2D7359430032567C /* XCRemoteSwiftPackageReference "Example" */ = {
+		108EE2832D7DDBEA00DC2BBD /* XCRemoteSwiftPackageReference "Example" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/benMohamed/Example";
 			requirement = {
@@ -361,9 +361,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		10F1D52B2D7359430032567C /* Journify-MoEngage */ = {
+		108EE2842D7DDBEA00DC2BBD /* Journify-MoEngage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 10F1D52A2D7359430032567C /* XCRemoteSwiftPackageReference "Example" */;
+			package = 108EE2832D7DDBEA00DC2BBD /* XCRemoteSwiftPackageReference "Example" */;
 			productName = "Journify-MoEngage";
 		};
 /* End XCSwiftPackageProductDependency section */

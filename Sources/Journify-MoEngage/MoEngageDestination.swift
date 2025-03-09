@@ -206,6 +206,10 @@ extension MoEngageDestination: UNUserNotificationCenterDelegate {
 
 public struct MoEngageSettings: Codable {
     var apiKey: String
+    
+    init(apiKey: String) {
+        self.apiKey = apiKey
+    }
 }
 
 enum UserAttributes: String, CaseIterable {
