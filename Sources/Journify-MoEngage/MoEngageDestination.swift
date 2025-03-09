@@ -206,7 +206,7 @@ extension MoEngageDestination: UNUserNotificationCenterDelegate {
 public struct MoEngageSettings {
     var apiKey: String
     
-    init(apiKey: String) {
+    public init(apiKey: String) {
         self.apiKey = apiKey
     }
 }
